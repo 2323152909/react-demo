@@ -1,0 +1,88 @@
+.transition-group {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  &.fade-left-enter-done,
+  &.fade-right-enter-done {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 99999;
+    }
+  }
+}
+
+.fade-left-enter {
+  z-index: 9;
+  animation: fadeIn-left 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+// .fade-left-exit {
+//   z-index: 8;
+//   animation: fadeOut-left 0.3s;
+//   animation-fill-mode: forwards;
+//   animation-timing-function: ease;
+// }
+
+@keyframes fadeIn-left {
+  0% {
+    transform: translate(100%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+// @keyframes fadeOut-left {
+//   0% {
+//     transform: translate(0);
+//   }
+
+//   to {
+//     transform: translate(-100%);
+//   }
+// }
+
+.fade-right-enter {
+  z-index: 9;
+  animation: fadeIn-right 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+// .fade-right-exit {
+//   z-index: 8;
+//   animation: fadeOut-right 0.3s;
+//   animation-fill-mode: forwards;
+//   animation-timing-function: ease;
+// }
+
+@keyframes fadeIn-right {
+  0% {
+    transform: translate(-100%);
+  }
+
+  to {
+    transform: translate(0%);
+  }
+}
+
+// @keyframes fadeOut-right {
+//   0% {
+//     transform: translate(0);
+//   }
+
+//   to {
+//     transform: translate(100%);
+//   }
+// }
